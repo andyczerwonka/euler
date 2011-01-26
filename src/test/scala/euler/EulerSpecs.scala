@@ -27,9 +27,10 @@ object EulerSpecs extends Specification {
     euler003.answer must_== 6857
   }
 
-  "005: The smallest number divisible by each of the numbers 1 through 20 is 232792560" in {
-    val euler005 = new Euler005
-    fail
+  "006: The difference between the sum of the squares of the first 100 numbers and the square of the sum is 25164150" in {
+    val euler006 = new Euler006
+    val range = 1 to 100
+    euler006.squareOfSums(range) - euler006.sumOfSquares(range) must_== 25164150
   }
 
 }
