@@ -22,5 +22,10 @@ object EulerSpecs extends Specification {
     euler002.answer must_== 4613732
   }
 
+  "The largest prime factor of the number 600851475143 is 6857" in {
+    val euler003 = new Euler003
+    euler003.answer must_== 6857
+  }
+
 }
 
