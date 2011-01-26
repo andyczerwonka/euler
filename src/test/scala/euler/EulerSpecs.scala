@@ -17,7 +17,7 @@ object EulerSpecs extends Specification {
     euler001.patternMatchApproach must_== 233168
   }
 
-  "The sum of all even valued term in the Fibonacci sequence whose value does not exceed 4 million is 4613732" in {
+  "The sum of all even valued terms in the Fibonacci sequence whose value does not exceed 4 million is 4613732" in {
     val euler002 = new Euler002
     euler002.answer must_== 4613732
   }
