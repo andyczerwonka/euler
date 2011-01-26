@@ -12,8 +12,8 @@ class Euler006 {
 
 object Euler006 {
   def main(args: Array[String]) {
-    val runner = new Euler006
+    val e6 = new Euler006
     val range = 1 to 100
-    println(runner.squareOfSums(range) - runner.sumOfSquares(range))
+    println(e6.squareOfSums(range) - e6.sumOfSquares(range))
   }
 }
