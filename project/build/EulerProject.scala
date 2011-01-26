@@ -1,6 +1,7 @@
 import sbt._
 
 class EulerProject(info: ProjectInfo) extends DefaultWebProject(info) {
+  
   // If you're using JRebel uncomment this line
   override def scanDirectories = Nil
 
