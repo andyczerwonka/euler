@@ -5,7 +5,7 @@ class Euler008 {
   def largestConsecutiveProduct(list: List[Char], count: Int) = {
     var max = -1
     for (index <- 0 until list.length) {
-      val product = list.slice(index, index + count).map(_ asDigit).foldLeft(1)(_ * _)
+      val product = list.slice(index, index + count).map(_ asDigit).product
       max = if (max > product) max else product
     }
     max
