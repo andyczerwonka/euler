@@ -39,5 +39,11 @@ val list = "73167176531330624919225119674426574742355349194934969835203127745063
     e8.largestConsecutiveProduct(list, 5) must_== 40824
   }
 
-}
+  "016: the sum of the digits of the number 2^1000 is 1366" in {
+    val digits = BigDecimal(2).pow(1000).toString
+	val e16 = new Euler016
+	e16.sumDigits(digits) must_== 1366
+  }
+
+  }
 
