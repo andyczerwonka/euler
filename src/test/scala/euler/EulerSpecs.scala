@@ -20,12 +20,12 @@ object EulerSpecs extends Specification {
 
   "002: The sum of all even valued terms in the Fibonacci sequence whose value does not exceed 4 million is 4613732" in {
     val e2 = new Euler002
-    e2.evenValuedSumBelow(4000000) must_== 4613732
+    e2 evenValuedSumBelow 4000000  must_== 4613732
   }
 
   "003: The largest prime factor of the number 600851475143 is 6857" in {
     val e3 = new Euler003
-    e3.largestPrimeFactor(600851475143L) must_== 6857
+    e3 largestPrimeFactor 600851475143L must_== 6857
   }
 
   "006: The difference between the sum of the squares of the first 100 numbers and the square of the sum is 25164150" in {
@@ -42,8 +42,8 @@ object EulerSpecs extends Specification {
 
   "016: the sum of the digits of the number 2^1000 is 1366" in {
     val e16 = new Euler016
-    val digits = BigDecimal(2).pow(1000).toString
-    e16.sumDigits(digits) must_== 1366
+    val digits = BigDecimal(2).pow(1000)
+    e16 sumDigits digits must_== 1366
   }
 
 }
