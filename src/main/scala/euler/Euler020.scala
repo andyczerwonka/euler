@@ -10,12 +10,4 @@ class Euler020 {
 
 }
 
-object Euler020 {
-
-  def main(args: Array[String]) {
-    val e = new Euler020
-    println(e.sumOfFactorialDigits(100))
-  }
-
-}
 
