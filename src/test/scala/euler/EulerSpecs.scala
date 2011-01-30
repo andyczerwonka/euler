@@ -40,10 +40,15 @@ object EulerSpecs extends Specification {
     e8.largestConsecutiveProduct(list, 5) must_== 40824
   }
 
-  "016: the sum of the digits of the number 2^1000 is 1366" in {
+  "016: The sum of the digits of the number 2^1000 is 1366" in {
     val e16 = new Euler016
     val digits = BigDecimal(2).pow(1000)
     e16 sumDigits digits must_== 1366
+  }
+
+  "020: The sum of digits in 100! is 648" in {
+    val e20 = new Euler020
+    e20 sumOfFactorialDigits 100 must_== 648
   }
 
 }
