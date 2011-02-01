@@ -6,10 +6,13 @@ class Euler011 {
 
 }
 
-
 object Euler011 {
-	def main(args: Array[String]) {
-		val e = new Euler011
-		println(e.rows)
-	}
+  def main(args: Array[String]) {
+    val rows = new Euler011().rows
+    val array = rows.map(row => row.sliding(4,1).toList).sliding(4,1).toArray
+    println("There are " + array.size + " groups")
+    println("Each group " + array(0).size + " rows")
+    println("Each row has " + array(0)(0).size + " elements")
+    println("Each element has " + array(0)(0)(0).size + " values")
+  }
 }
