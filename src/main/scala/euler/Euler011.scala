@@ -17,8 +17,8 @@ object Euler011 {
   def main(args: Array[String]) {
     type Matrix = Seq[Seq[Int]]
     val input = "01 02 03 04 05 06 07 08 09 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25"
-    val intArray = input split " " map (_.toInt) toSeq
-    val array2D = (intArray grouped 5 )
+    val intArray = input split " " map (_.toInt) toList
+    val array2D = (intArray grouped 5 toList)
     val sliced = array2D.map(row => row.sliding(3, 1).toList).sliding(3, 1).toList
     val subMatrices: List[Matrix] = sliced flatMap (_.transpose)
     println(subMatrices)
