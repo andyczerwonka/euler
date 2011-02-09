@@ -5,7 +5,7 @@ import Actor._
 
 import scala.collection.mutable.ListBuffer
 
-class Euler011 extends Actor {
+object Euler011 extends Actor {
 
   type Matrix = Seq[Seq[Int]]
   case class CalculateMaxRequest(matrix: Matrix, from: Actor)
@@ -77,8 +77,7 @@ class Euler011 extends Actor {
 
 object Euler011Main {
   def main(args: Array[String]) {
-    val e = new Euler011
-    e.start()
-    e.execute()
+    Euler011.start()
+    Euler011.execute()
   }
 }
