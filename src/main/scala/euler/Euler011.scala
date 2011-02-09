@@ -3,8 +3,6 @@ package euler
 import scala.actors.Actor
 import Actor._
 
-import scala.collection.mutable.ListBuffer
-
 object Euler011 extends Actor {
 
   type Matrix = Seq[Seq[Int]]
