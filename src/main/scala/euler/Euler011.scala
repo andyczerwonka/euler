@@ -18,24 +18,24 @@ class Euler011 extends Actor {
     val intArray = input split " " map (_.toInt) toList
     val array2D = (intArray grouped 20 toList)
     val sliced = array2D.map(row => row.sliding(4, 1).toList).sliding(4, 1).toList
-    val subMatrices: List[Matrix] = sliced flatMap (_.transpose)
-    count = subMatrices.size
+    val matrices: List[Matrix] = sliced flatMap (_.transpose)
+    count = matrices.size
     println("We have " + count + " matrices to process, each using an actor")
-    for (matrix <- subMatrices) {
+    for (matrix <- matrices) {
       val calculator = new MaxProductCalculator
       calculator.start()
       calculator ! CalculateMaxRequest(matrix, this)
     }
   }
 
-  var total = 0
+  var max = 0
   override def act() = loop {
     react {
-      case CalculateMaxReply(matrix, max) =>
-        total = if (max > total) max else total
+      case CalculateMaxReply(matrix, maxProduct) =>
+        max = if (maxProduct > max) maxProduct else max
         count -= 1
         if (count == 0) {
-          println("Found it.  The answer is " + total)
+          println("Found it.  The answer is " + max)
           exit()
         }
     }
