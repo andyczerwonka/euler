@@ -56,7 +56,7 @@ object Euler011 extends Actor {
         val end = matrix.size - 1
         for (i <- 0 to end) {
           leftTotal = leftTotal * matrix(i)(i)
-          rightTotal = rightTotal * matrix(end-i)(i)
+          rightTotal = rightTotal * matrix(end - i)(i)
         }
         (leftTotal, rightTotal)
       }
@@ -72,7 +72,7 @@ object Euler011 extends Actor {
 
 }
 
-object Euler011Main extends Application {
-  Euler011.start
-  Euler011.execute
-}
+//object Euler011Main extends Application {
+//  Euler011.start
+//  Euler011.execute
+//}
