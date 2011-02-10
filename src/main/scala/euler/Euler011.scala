@@ -40,7 +40,6 @@ object Euler011 extends Actor {
   }
 
   class MaxProductCalculator extends Actor {
-
     override def act() = loop {
       react {
         case CalculateMaxRequest(matrix, actor) =>
@@ -54,10 +53,10 @@ object Euler011 extends Actor {
       def calculateDiagonals(matrix: Matrix) = {
         var leftTotal = 1
         var rightTotal = 1
-		val end = matrix.size - 1
-		for (i <- 0 to end) {
+        val end = matrix.size - 1
+        for (i <- 0 to end) {
           leftTotal = leftTotal * matrix(i)(i)
-          rightTotal = rightTotal * matrix(end - i)(i)
+          rightTotal = rightTotal * matrix(end-i)(i)
         }
         (leftTotal, rightTotal)
       }
@@ -73,9 +72,7 @@ object Euler011 extends Actor {
 
 }
 
-object Euler011Main {
-  def main(args: Array[String]) {
-    Euler011.start()
-    Euler011.execute()
-  }
+object Euler011Main extends Application {
+  Euler011.start
+  Euler011.execute
 }
