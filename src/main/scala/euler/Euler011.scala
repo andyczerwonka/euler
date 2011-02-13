@@ -72,7 +72,7 @@ object Euler011 extends Actor {
 
 }
 
-//object Euler011Main extends Application {
-//  Euler011.start
-//  Euler011.execute
-//}
+object Euler011Main extends Application {
+  Euler011.start
+  Euler011.execute
+}
