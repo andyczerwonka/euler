@@ -1,9 +1,9 @@
 package euler
 
+import euler.Helper.fibonacciSeq
+
 class Euler002 {
 
-  lazy val fib: Stream[Int] = new Helper().fibonacciSeq
-
-  def evenValuedSumBelow(ceiling: Int) = fib.filter(_ % 2 == 0).takeWhile(_ < ceiling).sum
+  def evenValuedSumBelow(ceiling: Int) = fibonacciSeq.filter(_ % 2 == 0).takeWhile(_ < ceiling).sum
 
 }
