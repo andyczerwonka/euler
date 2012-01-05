@@ -1,6 +1,6 @@
 package euler
 
-class Euler003 {
+object Euler003 {
 
   lazy val naturals: Stream[Int] = Stream.cons(2, naturals.map(_ + 1))
 

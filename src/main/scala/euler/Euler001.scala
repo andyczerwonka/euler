@@ -1,6 +1,6 @@
 package euler
 
-class Euler001 {
+object Euler001 {
 
   // view is added to the range to virtualize the filter call
   def filterApproach(range: Range) = range.view.filter(i => (i % 3 == 0 || i % 5 == 0)).sum

@@ -2,7 +2,7 @@ package euler
 
 import euler.Helper.fact
 
-class Euler020 {
+object Euler020 {
 
   def factorial(number: Int) = fact(BigInt(number))
 

@@ -1,6 +1,6 @@
 package euler
 
-class Euler006 {
+object Euler006 {
 
   private def square(x: Int) = x * x
 

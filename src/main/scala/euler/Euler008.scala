@@ -1,6 +1,6 @@
 package euler
 
-class Euler008 {
+object Euler008 {
 
    def largestConsecutiveProduct(string: String, count: Int) =
       string
