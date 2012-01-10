@@ -49,6 +49,8 @@ class EulerSpecs2 extends JUnitMustMatchers {
     isPalindrome(9009) mustEqual true
     isPalindrome(9008) mustEqual false
 
+    val array = for (i <- 999 to 1 by -1; j <- 999 to i by -1 if isPalindrome(i * j)) yield i * j
+    array.max mustEqual 906609
   }
 
 }
