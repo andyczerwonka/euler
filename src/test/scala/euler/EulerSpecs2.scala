@@ -34,20 +34,21 @@ class EulerSpecs2 extends JUnitMustMatchers {
       def split(n: Int) = {
         val stringValue = n.toString()
         val left = stringValue.substring(0, stringValue.size / 2)
-        val right = stringValue.substring(stringValue.size / 2)
+        val right =  {
+          if (stringValue.size % 2 == 0) 
+            stringValue.substring(stringValue.size / 2) 
+          else stringValue.substring(stringValue.size / 2 + 1)
+        }
         (left, right)
       }
 
-      if (n.toString.size % 2 != 0)
-        false
-      else {
-        val (left, right) = split(n)
-        left.equals(right.reverse)
-      }
+      val (left, right) = split(n)
+      left.equals(right.reverse)
     }
 
     isPalindrome(9009) mustEqual true
     isPalindrome(9008) mustEqual false
+    isPalindrome(80508) mustEqual true
 
     val array = for (i <- 999 to 1 by -1; j <- 999 to i by -1 if isPalindrome(i * j)) yield i * j
     array.max mustEqual 906609
