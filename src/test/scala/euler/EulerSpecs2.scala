@@ -57,7 +57,7 @@ class EulerSpecs2 extends JUnitMustMatchers {
   @Test
   def testEuler025 {
     lazy val fib: Stream[java.math.BigDecimal] = Stream.cons(new java.math.BigDecimal(0), Stream.cons(new java.math.BigDecimal(1), fib.zip(fib.tail).map(p => p._1.add(p._2))))
-    val size = fib.map(v => v.toString()).takeWhile(s => s.size < 1000).size
+    val size = fib.map(_.toString()).takeWhile(_.size < 1000).size
     size mustEqual 4782
   }
 
