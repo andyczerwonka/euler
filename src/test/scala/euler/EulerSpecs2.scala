@@ -34,9 +34,9 @@ class EulerSpecs2 extends JUnitMustMatchers {
       def split(n: Int) = {
         val stringValue = n.toString()
         val left = stringValue.substring(0, stringValue.size / 2)
-        val right =  {
-          if (stringValue.size % 2 == 0) 
-            stringValue.substring(stringValue.size / 2) 
+        val right = {
+          if (stringValue.size % 2 == 0)
+            stringValue.substring(stringValue.size / 2)
           else stringValue.substring(stringValue.size / 2 + 1)
         }
         (left, right)
@@ -52,6 +52,13 @@ class EulerSpecs2 extends JUnitMustMatchers {
 
     val array = for (i <- 999 to 1 by -1; j <- 999 to i by -1 if isPalindrome(i * j)) yield i * j
     array.max mustEqual 906609
+  }
+
+  @Test
+  def testEuler025 {
+    lazy val fib: Stream[java.math.BigDecimal] = Stream.cons(new java.math.BigDecimal(0), Stream.cons(new java.math.BigDecimal(1), fib.zip(fib.tail).map(p => p._1.add(p._2))))
+    val size = fib.map(v => v.toString()).takeWhile(s => s.size < 1000).size
+    size mustEqual 4782
   }
 
 }
