@@ -28,37 +28,22 @@ class EulerSpecs2 extends JUnitMustMatchers {
 
   @Test
   def testEuler004 {
-
-    def isPalindrome(n: Int): Boolean = {
-
-      def split(n: Int) = {
-        val stringValue = n.toString()
-        val left = stringValue.substring(0, stringValue.size / 2)
-        val right = {
-          if (stringValue.size % 2 == 0)
-            stringValue.substring(stringValue.size / 2)
-          else stringValue.substring(stringValue.size / 2 + 1)
-        }
-        (left, right)
-      }
-
-      val (left, right) = split(n)
-      left.equals(right.reverse)
-    }
-
-    isPalindrome(9009) mustEqual true
-    isPalindrome(9008) mustEqual false
-    isPalindrome(80508) mustEqual true
-
+    
+    def isPalindrome(n: Int) = n.toString() == n.toString().reverse
     val array = for (i <- 999 to 1 by -1; j <- 999 to i by -1 if isPalindrome(i * j)) yield i * j
     array.max mustEqual 906609
   }
 
   @Test
   def testEuler025 {
-    lazy val fib: Stream[java.math.BigDecimal] = Stream.cons(new java.math.BigDecimal(0), Stream.cons(new java.math.BigDecimal(1), fib.zip(fib.tail).map(p => p._1.add(p._2))))
+    lazy val fib: Stream[BigInt] = Stream.cons(0, Stream.cons(1, fib.zip(fib.tail).map(p => p._1 + p._2)))
     val size = fib.map(_.toString()).takeWhile(_.size < 1000).size
     size mustEqual 4782
+  }
+  
+  @Test
+  def testEuler019 {
+    
   }
 
 }

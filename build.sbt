@@ -18,6 +18,7 @@ resolvers += "Typesafe Snapshots" at "http://repo.typesafe.com/typesafe/snapshot
 
 libraryDependencies ++= {
   Seq(
+    "joda-time" % "joda-time" % "2.0",
     "junit" % "junit" % "4.8" % "test",
     "org.scala-tools.testing" %% "specs" % "1.6.9" % "test",
     "org.specs2" %% "specs2" % "1.7.1" % "test"
