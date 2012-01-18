@@ -5,6 +5,8 @@ import scala.math.BigInt.int2bigInt
 import org.junit.Test
 import org.specs2.matcher.JUnitMustMatchers
 
+import euler.Helper.primes
+
 class EulerSpecs2 extends JUnitMustMatchers {
 
   @Test
@@ -16,9 +18,12 @@ class EulerSpecs2 extends JUnitMustMatchers {
 
   @Test
   def testEuler007 {
-    lazy val primes: Stream[Int] = 2 #:: Stream.from(3).filter(i =>
-      primes.takeWhile(j => j * j <= i).forall(i % _ > 0))
     primes(10000) mustEqual 104743
+  }
+
+  @Test
+  def testEuler010 {
+    primes.takeWhile(_ < 2000000).toList.foldLeft(0L)(_ + _) mustEqual 142913828922L
   }
 
   @Test
