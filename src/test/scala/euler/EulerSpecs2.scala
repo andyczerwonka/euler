@@ -16,13 +16,6 @@ class EulerSpecs2 extends JUnitMustMatchers {
 
   @Test
   def testEuler007 {
-    def from(n: Int): Stream[Int] = n #:: from(n + 1)
-    def primes(nums: Stream[Int]): Stream[Int] = nums.head #:: primes(nums.tail.filter(_ % nums.head != 0))
-    primes(from(2)).take(100001)(10000) mustEqual 3571
-  }
-
-  @Test
-  def testEuler007Cheat {
     lazy val primes: Stream[Int] = 2 #:: Stream.from(3).filter(i =>
       primes.takeWhile(j => j * j <= i).forall(i % _ > 0))
     primes(10000) mustEqual 104743
