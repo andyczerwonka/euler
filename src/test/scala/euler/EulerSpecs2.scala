@@ -43,7 +43,6 @@ class EulerSpecs2 extends JUnitMustMatchers {
 
   @Test
   def testEuler004 {
-
     def isPalindrome(n: Int) = n.toString() == n.toString().reverse
     val array = for (i <- 999 to 1 by -1; j <- 999 to i by -1 if isPalindrome(i * j)) yield i * j
     array.max mustEqual 906609
@@ -57,8 +56,19 @@ class EulerSpecs2 extends JUnitMustMatchers {
   }
 
   @Test
-  def testEuler019 {
-
+  def testEuler014 {
+    
+    def candidateStream(i: Int) = {
+      def next(i: Int) = if (i%2 == 0) i/2 else 3*i+1
+      def stream(i: Int) : Stream[Int] = Stream.cons(i, stream(next(i)))
+      stream(i).takeWhile(_ > 1)
+    }
+    
+    for (i <- 1 until 1000) {
+      val candidate = candidateStream(i)
+      println("===========")
+    }
+    
   }
 
 }
