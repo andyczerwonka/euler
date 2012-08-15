@@ -4,7 +4,7 @@ name := "euler"
 
 version := "0.1"
 
-scalaVersion := "2.9.1"
+scalaVersion := "2.9.2"
 
 retrieveManaged := false
 
@@ -20,7 +20,6 @@ libraryDependencies ++= {
   Seq(
     "joda-time" % "joda-time" % "2.0",
     "junit" % "junit" % "4.8" % "test",
-    "org.scala-tools.testing" %% "specs" % "1.6.9" % "test",
-    "org.specs2" %% "specs2" % "1.7.1" % "test"
+    "org.specs2" %% "specs2" % "1.12" % "test"
   )
 }
